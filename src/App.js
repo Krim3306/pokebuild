@@ -7,6 +7,7 @@ import AllTypes from './AllTypes';
 import WaterTypePokemons from './WaterTypePokemons';
 import FireTypePokemons from './FireTypePokemons';
 import GrassTypePokemons from './GrassTypePokemons';
+import PokemonByTypes from './PokemonByTypes';
 
 function App() {
   return (
@@ -14,10 +15,10 @@ function App() {
       <Header />
       <FirstPokemons />
       <AllTypes />
-      <h2>Les Pokemons Par Type</h2>
       <WaterTypePokemons />
       <FireTypePokemons />
       <GrassTypePokemons />
+      <PokemonByTypes type = {"Normal"} />
       <Footer />
     </>
   );

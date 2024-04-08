@@ -14,7 +14,8 @@ const AllTypes = () => {
 
     return (
         <section className="section-all-type">
-            <h2>Tout Les Types Pokemon</h2>
+            <h2>Les Pokemons Par Type</h2>
+            <h3>Tout Les Types Pokemon</h3>
             <div className="container-all-type">
                 {types.map((pokemon) =>{
                     return (
