@@ -13,8 +13,8 @@ function App() {
   return (
     <>
       <Header />
-      <FirstPokemons />
       <AllTypes />
+      <FirstPokemons />
       <WaterTypePokemons />
       <FireTypePokemons />
       <GrassTypePokemons />
