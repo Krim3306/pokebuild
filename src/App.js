@@ -1,25 +1,50 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import Header from './Header';
-import Footer from './Footer';
-import FirstPokemons from './FirstPokemons';
-import AllTypes from './AllTypes';
-import WaterTypePokemons from './WaterTypePokemons';
-import FireTypePokemons from './FireTypePokemons';
-import GrassTypePokemons from './GrassTypePokemons';
-import PokemonByTypes from './PokemonByTypes';
-import RandomPokemon from './RandomTeam';
-import FirstGeneration from './FirstGeneration';
-import SecondGeneration from './SecondGeneration';
-import ThirdGeneration from './ThirdGeneration';
-import PokemonSearch from './PokemonSearch';
-import PokemonResistanceByType from './PokemonResistanceByType';
+// import Header from './Component/Header';
+// import Footer from './Component/Footer';
+// import FirstPokemons from './Component/FirstPokemons';
+// import AllTypes from './Component/AllTypes';
+// import WaterTypePokemons from './Component/WaterTypePokemons';
+// import FireTypePokemons from './Component/FireTypePokemons';
+// import GrassTypePokemons from './Component/GrassTypePokemons';
+// import PokemonByTypes from './Component/PokemonByTypes';
+// import RandomPokemon from './Component/RandomTeam';
+// import FirstGeneration from './Component/FirstGeneration';
+// import SecondGeneration from './Component/SecondGeneration';
+// import ThirdGeneration from './Component/ThirdGeneration';
+// import PokemonSearch from './Component/PokemonSearch';
+// import PokemonResistanceByType from './Component/PokemonResistanceByType';
+import { BrowserRouter, Route, Routes, } from 'react-router-dom';
+import HomePage from './Page/HomePage';
+import FirstGenerationPage from './Page/FirstGenerationPage';
+import GrassTypePokemonsPage from './Page/GrassTypePokemonsPage';
+import PokemonByTypePage from './Page/PokemonByTypePage';
+import PokemonResistanceByTypePage from './Page/PokemonResistanceByTypePage';
+import PokemonSearchPage from './Page/PokemonSearchPage';
+import RandomTeamPage from './Page/RandomTeamPage';
+import WaterTypePokemonsPage from './Page/WaterTypePokemonsPage';
+import FireTypePokemonsPage from './Page/FireTypePokemonsPage';
+
 
 function App() {
   return (
     <>
-      <Header />
-      <PokemonResistanceByType />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/FirstGenerationPage' element={<FirstGenerationPage />} />
+          <Route path='/GrassTypePokemonsPage' element={<GrassTypePokemonsPage />} />
+          <Route path='/FireTypePokemonsPage' element={<FireTypePokemonsPage />} />
+          <Route path='/WaterTypePokemonsPage' element={<WaterTypePokemonsPage />} />
+          <Route path='/PokemonByTypePage' element={<PokemonByTypePage />} />
+          <Route path='/PokemonResistanceByTypePage' element={<PokemonResistanceByTypePage />} />
+          <Route path='/PokemonSearchPage' element={<PokemonSearchPage />} />
+          <Route path='/RandomTeamPage' element={<RandomTeamPage />} />
+        </Routes>
+      </BrowserRouter>
+
+      {/* <Header />
+      <PokemonResistanceByType /> */}
       {/* <PokemonSearch />
       <AllTypes />
       <RandomPokemon />
