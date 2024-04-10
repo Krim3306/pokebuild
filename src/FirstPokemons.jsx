@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const FirstPokemons = () => {
     const [pokemons, setPokemons] = useState([]);
 
-    fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/100")
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-        setPokemons(data)
-        console.log(data)
-    });
+    useEffect(() => {
+        fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/100")
+            .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            setPokemons(data)
+            console.log(data)
+        });
+    },[]) 
 
     const firstHundredPokemons = pokemons.slice(0,9)
 
@@ -20,7 +22,7 @@ const FirstPokemons = () => {
             <div className="container-trois-starter">
             {firstHundredPokemons.map((pokemon) =>{
                 return (
-                    <article className="sous-container-trois-starter">
+                    <article key={pokemon.id} className="sous-container-trois-starter">
                             <h3>{pokemon.name}</h3>
                             <img className="img-type" src={pokemon.image} alt="{pokemon.name}"></img>
                         <div>

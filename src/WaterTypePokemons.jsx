@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const WaterTypePokemons = () => {
     const [waterTypes, setwaterTypes] = useState([]);
 
-    fetch("https://pokebuildapi.fr/api/v1/pokemon/type/Eau")
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-        setwaterTypes(data)
-        console.log(data)
-    });
+    useEffect(() => {
+        fetch("https://pokebuildapi.fr/api/v1/pokemon/type/Eau")
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            setwaterTypes(data)
+            console.log(data)
+        });
+    },[])  
 
     const firstThreeWaterPokemons = waterTypes.slice(0,3)
 

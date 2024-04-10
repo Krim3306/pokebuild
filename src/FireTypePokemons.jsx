@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const FireTypePokemons = () => {
     const [FireTypes, setFireTypes] = useState([]);
 
-    fetch("https://pokebuildapi.fr/api/v1/pokemon/type/Feu")
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-        setFireTypes(data)
-        console.log(data)
-    });
+    useEffect(() => {
+        fetch("https://pokebuildapi.fr/api/v1/pokemon/type/Feu")
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            setFireTypes(data)
+            console.log(data)
+        });
+    },[]) 
 
     const firstThreeFirePokemons = FireTypes.slice(0,3)
 

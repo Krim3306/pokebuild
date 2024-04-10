@@ -2,7 +2,7 @@ const Footer = () => {
     return (
         <footer>
             <h2>POKEMON</h2>
-            <p className="userName">Regrag Karim</p>
+            <p className="userName">CopyRight || Regrag Karim</p>
         </footer>
     )
 }

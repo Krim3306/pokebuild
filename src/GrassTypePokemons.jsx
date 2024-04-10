@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const GrassTypePokemons = () => {
     const [GrassTypes, setGrassTypes] = useState([]);
 
-    fetch("https://pokebuildapi.fr/api/v1/pokemon/type/Plante")
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-        setGrassTypes(data)
-        console.log(data)
-    });
+    useEffect(() => {
+        fetch("https://pokebuildapi.fr/api/v1/pokemon/type/Plante")
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            setGrassTypes(data)
+            console.log(data)
+        });
+    },[]) 
 
     const firstThreeGrassPokemons = GrassTypes.slice(0,3)
 
